@@ -36,6 +36,15 @@ ul {
   list-style: none;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+
 input {
   width: 100%;
   padding-block: 0.6rem;
@@ -53,13 +62,16 @@ input::placeholder {
 }
 
 @media (min-width: 992px) {
+
   #root,
-  main,
-  section {
+  main {
     height: 100%;
   }
 
   .main-flex {
     display: flex;
+    justify-content: space-between;
   }
+
+
 }

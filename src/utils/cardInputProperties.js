@@ -1,7 +1,9 @@
+
 export const cardInputProperties = {
   name: {
     input: {
-      name: "Full Name",
+      label: 'cardholder name',
+      name: "name",
       type: "text",
       tabIndex: 1,
       placeholder: "e.g. Jane Appleseed",
@@ -10,21 +12,22 @@ export const cardInputProperties = {
     validationHookForm: {
       required: {
         value: true,
-        message: "nombre es requerido",
+        message: "Can't be blank",
       },
       minLength: {
         value: 4,
-        message: "minimo 4 char",
+        message: "Minimun 4 character",
       },
       pattern: {
         value: /[A-Za-z ]/,
-        message: "Solo letras permitidas",
+        message: "Just letters",
       },
     },
   },
 
   numberCard: {
     input: {
+      label: 'card number',
       type: "number",
       tabIndex: 2,
       name: "number",
@@ -37,21 +40,22 @@ export const cardInputProperties = {
     validationHookForm: {
       required: {
         value: true,
-        message: "numero es requerido",
+        message: "Can't be blank",
       },
       minLength: {
         value: 16,
-        message: "minimo 16 char",
+        message: "16 numbers",
       },
       pattern: {
         value: /[0-9 ]/,
-        message: "Solo numeros permitidas",
+        message: "Wrong format, numbers only",
       },
     },
   },
 
   month: {
     input: {
+      label: 'exp.date(mm/yy)',
       type: "number",
       tabIndex: 3,
       name: "month",
@@ -64,21 +68,18 @@ export const cardInputProperties = {
     validationHookForm: {
       required: {
         value: true,
-        message: "numero es requerido",
-      },
-      maxLength: {
-        value: 1,
-        message: "minimo 16 char",
+        message: "Can't be blank",
       },
       pattern: {
         value: /[0-9 ]/,
-        message: "Solo numeros permitidas",
+        message: "Numbers only",
       },
     },
   },
 
   year: {
     input: {
+      label: '',
       type: "number",
       tabIndex: 4,
       name: "year",
@@ -91,21 +92,18 @@ export const cardInputProperties = {
     validationHookForm: {
       required: {
         value: true,
-        message: "numero es requerido",
-      },
-      maxLength: {
-        value: 1,
-        message: "minimo 16 char",
+        message: "Can't be blank",
       },
       pattern: {
         value: /[0-9 ]/,
-        message: "Solo numeros permitidas",
+        message: "Numbers only",
       },
     },
   },
 
   code: {
     input: {
+      label: 'cvc',
       type: "number",
       tabIndex: 5,
       name: "code",
@@ -118,15 +116,15 @@ export const cardInputProperties = {
     validationHookForm: {
       required: {
         value: true,
-        message: "numero es requerido",
+        message: "Can't be blank",
       },
-      maxLength: {
-        value: 1,
-        message: "minimo 16 char",
+      minLength: {
+        value: 2,
+        message: "Minimo 3 char",
       },
       pattern: {
         value: /[0-9 ]/,
-        message: "Solo numeros permitidas",
+        message: "Just Numbers",
       },
     },
   },

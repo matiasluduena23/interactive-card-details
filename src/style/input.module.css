@@ -1,0 +1,29 @@
+.inputWrap {
+  position: relative;
+
+}
+
+.inputLabel {
+  position: absolute;
+  left: 5px;
+  top: 0;
+  text-transform: uppercase;
+}
+
+.inputField {
+  margin-block: 1.7rem;
+}
+
+.spanError {
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+  color: tomato;
+  font-size: 12px;
+  display: block;
+  letter-spacing: 0.5px;
+}
+
+.inputError {
+  border: 2px solid tomato;
+}

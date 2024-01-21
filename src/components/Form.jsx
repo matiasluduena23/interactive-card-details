@@ -4,12 +4,20 @@ import { useForm } from "react-hook-form";
 import Input from "./Input";
 import styles from "../style/form.module.css";
 
+
 export default function Form({ changeNumber, changeCard }) {
   const { name, numberCard, month, year, code } = cardInputProperties;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    getValues,
+    watch,
+  } = useForm();
 
+  //print number in card with spaces
   const handleNumber = (e) => {
     let formatNumber = "";
-
     for (let index = 0; index < e.target.value.length; index++) {
       formatNumber += e.target.value[index];
 
@@ -19,15 +27,13 @@ export default function Form({ changeNumber, changeCard }) {
     changeNumber(formatNumber);
   };
 
+  //print values in card
   const onHandlerChange = (e) => {
     changeCard(e);
   };
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+
+
 
   return (
     <section className={styles.section}>
@@ -35,11 +41,19 @@ export default function Form({ changeNumber, changeCard }) {
         className={styles.form}
         onSubmit={handleSubmit((data) => console.log(data))}
       >
-        <Input register={register} inputProps={name} error={errors} />
-        <Input register={register} inputProps={numberCard} error={errors} />
-        <Input register={register} inputProps={month} error={errors} />
-        <Input register={register} inputProps={year} error={errors} />
-        <Input register={register} inputProps={code} error={errors} />
+        <Input register={register} inputProps={name} error={errors} handleChange={onHandlerChange} />
+        <Input register={register} inputProps={numberCard} error={errors} handleChange={handleNumber} />
+
+        <div className={styles.formGrid}>
+          <div className={styles.formGrid}>
+            <Input watch={watch} register={register} inputProps={month} error={errors} handleChange={onHandlerChange} />
+            <Input register={register} inputProps={year} error={errors} handleChange={onHandlerChange} />
+          </div>
+          <div className="col-2">
+            <Input register={register} inputProps={code} error={errors} handleChange={onHandlerChange} />
+          </div>
+        </div>
+
 
         <input className={styles.formButton} type="submit" value="Confirm" />
       </form>

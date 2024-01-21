@@ -9,7 +9,7 @@ export default function Card({ card }) {
   const { name, number, month, year, code } = card;
 
   return (
-    <section>
+    <section className={styles.section}>
       <div className={styles.cards}>
         <div className="container">
           <div className={styles.cardFront}>
