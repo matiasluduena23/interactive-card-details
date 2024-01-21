@@ -1,6 +1,4 @@
-import React from "react";
 import styles from "../style/card.module.css";
-
 import cardFront from "../assets/bg-card-front.png";
 import cardLogo from "../assets/card-logo.svg";
 import cardBack from "../assets/bg-card-back.png";

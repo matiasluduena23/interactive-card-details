@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../style/input.module.css";
 
 export default function Input({ watch = null, register, inputProps, error, handleChange }) {
@@ -12,7 +11,6 @@ export default function Input({ watch = null, register, inputProps, error, handl
       const year = watch('year');
       const date = new Date(`20${year}/${value}/01`)
       const today = new Date()
-      console.log(date.getTime(), today.getTime(), value)
       return (!isNaN(date) && date.getTime() > today.getTime()) || 'Wrong date'
     },
   }

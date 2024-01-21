@@ -5,13 +5,13 @@ import Input from "./Input";
 import styles from "../style/form.module.css";
 
 
-export default function Form({ changeNumber, changeCard }) {
+export default function Form({ changeNumber, changeCard, sendForm }) {
   const { name, numberCard, month, year, code } = cardInputProperties;
   const {
     register,
     handleSubmit,
     formState: { errors },
-    getValues,
+    reset,
     watch,
   } = useForm();
 
@@ -39,7 +39,7 @@ export default function Form({ changeNumber, changeCard }) {
     <section className={styles.section}>
       <form
         className={styles.form}
-        onSubmit={handleSubmit((data) => console.log(data))}
+        onSubmit={handleSubmit(() => { sendForm(); reset() })}
       >
         <Input register={register} inputProps={name} error={errors} handleChange={onHandlerChange} />
         <Input register={register} inputProps={numberCard} error={errors} handleChange={handleNumber} />

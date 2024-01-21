@@ -61,6 +61,19 @@ input::placeholder {
   color: var(--gray);
 }
 
+.send-form {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  opacity: 0.4;
+  z-index: 10;
+}
+
 @media (min-width: 992px) {
 
   #root,
